@@ -8,17 +8,25 @@ import Error from './components/Error/Error'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 export default function App() {
- let Router = createBrowserRouter([{
-    path:"", element:<Layout/>, children: [
-      {path:"/tailwindnat/" , element:<Home/>},
-      {path:"/home" , element:<Home/>},
-      {path:"/about" , element:<About/>},
-      {path:"/blog" , element:<Blog/>},
-      {path:"/contact" , element:<Contact/>},
-      {path:"*" , element:<Error/>}
-    ]
-  }])
-  return <RouterProvider router={Router}/>
+  const Router = createBrowserRouter(
+    [
+      {
+        path: '/',
+        element: <Layout />,
+        children: [
+          { index: true, element: <Home /> },
+          { path: 'home', element: <Home /> },
+          { path: 'about', element: <About /> },
+          { path: 'blog', element: <Blog /> },
+          { path: 'contact', element: <Contact /> },
+          { path: '*', element: <Error /> }
+        ]
+      }
+    ],
+    {
+      basename: '/tailwindnat'
+    }
+  )
+
+  return <RouterProvider router={Router} />
 }
-
-
