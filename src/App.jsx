@@ -11,11 +11,11 @@ export default function App() {
  let Router = createBrowserRouter([{
     path:"", element:<Layout/>, children: [
       {path:"/tailwindnat/" , element:<Home/>},
-      {path:"/tailwindnat/home" , element:<Home/>},
-      {path:"/tailwindnat/about" , element:<About/>},
-      {path:"/tailwindnat/blog" , element:<Blog/>},
-      {path:"/tailwindnat/contact" , element:<Contact/>},
-      {path:"/tailwindnat/*" , element:<Error/>}
+      {path:"/home" , element:<Home/>},
+      {path:"/about" , element:<About/>},
+      {path:"/blog" , element:<Blog/>},
+      {path:"/contact" , element:<Contact/>},
+      {path:"*" , element:<Error/>}
     ]
   }])
   return <RouterProvider router={Router}/>
