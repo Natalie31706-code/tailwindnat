@@ -10,7 +10,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom'
 export default function App() {
   let Router = createHashRouter([
     {
-      path: '/',
+      path: '/tailwindnat/',
       element: <Layout />,
       children: [
         { index: true, element: <Home /> },
